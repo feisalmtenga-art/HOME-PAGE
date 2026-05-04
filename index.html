@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>student portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #ff6b9d 0%, #c06c84 100%);
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        header {
+            background: linear-gradient(135deg, #d63384 0%, #e83e8c 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            margin-bottom: 30px;
+        }
+        header h1 {
+            margin: 10px 0;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+        }
+        section {
+            background: white;
+            margin: 20px auto;
+            padding: 25px;
+            border-radius: 12px;
+            max-width: 900px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+        h2 {
+            color: #d63384;
+            border-bottom: 3px solid #ff6b9d;
+            padding-bottom: 10px;
+            font-size: 1.8em;
+        }
+        h3 {
+            color: #e83e8c;
+            border-left: 5px solid #ff6b9d;
+            padding-left: 15px;
+            font-size: 1.6em;
+        }
+        h4 {
+            color: #d63384;
+            font-size: 1.4em;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        table th {
+            background: linear-gradient(135deg, #ff6b9d 0%, #d63384 100%);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: bold;
+        }
+        table tr:nth-child(even) {
+            background-color: #ffe4ed;
+        }
+        table tr:hover {
+            background-color: #ffd1e0;
+        }
+        table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #ddd;
+        }
+        ol, ul {
+            color: #333;
+            line-height: 1.8;
+        }
+        ol li, ul li {
+            margin: 10px 0;
+            padding: 8px;
+            background-color: #fff0f6;
+            border-left: 4px solid #ff6b9d;
+            border-radius: 5px;
+        }
+        a {
+            color: #d63384;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 8px 12px;
+            background-color: #ffe4ed;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        a:hover {
+            background-color: #ff6b9d;
+            color: white;
+            transform: translateY(-2px);
+        }
+        .images {
+            text-align: center;
+            margin: 20px 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #ffe4ed 0%, #ffd1e0 100%);
+            border-radius: 12px;
+        }
+        .images img {
+            border-radius: 15px;
+            border: 4px solid #ff6b9d;
+            box-shadow: 0 10px 30px rgba(255, 107, 157, 0.4);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            max-width: 100%;
+            height: auto;
+            display: inline-block;
+        }
+        .images img:hover {
+            transform: scale(1.08) rotateY(5deg);
+            box-shadow: 0 15px 40px rgba(255, 107, 157, 0.6);
+            filter: brightness(1.1);
+            border-color: #d63384;
+        }
+        .container {
+            background: linear-gradient(135deg, #ffe4ed 0%, #ffd1e0 100%);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+            max-width: 900px;
+            margin: 20px auto;
+        }
+        .container h3 {
+            color: #d63384;
+            text-align: center;
+        }
+        .container label {
+            color: #d63384;
+            font-weight: bold;
+            display: block;
+            margin-top: 15px;
+        }
+        .container input {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 2px solid #ff6b9d;
+            border-radius: 5px;
+            font-size: 1em;
+            box-sizing: border-box;
+        }
+        .container input:focus {
+            outline: none;
+            border-color: #d63384;
+            background-color: #fff0f6;
+        }
+        .container button {
+            background: linear-gradient(135deg, #ff6b9d 0%, #d63384 100%);
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 15px;
+            width: 100%;
+            transition: all 0.3s ease;
+        }
+        .container button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(255, 107, 157, 0.4);
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        section img {
+            animation: imageFloat 3s ease-in-out infinite;
+        }
+    </style>
+</head>
+    <header>
+       <h1>WELCOME TO MY PAGE</h1>
+       <h1>STELLA JACKSON</h1>
+       
+       <br> 
+</header>
+<section>
+    <h2>1.Personal information</h2>
+    <p>
+        I am a first year student at university of dar es salaam pursuing the bachelor
+        of business in information technology.The goals of studying this course is to increasing knowledge about web programing,graphic desning and hardware and software deve
+        lopment.And finally to ssen where my career about programing development will be
+        end up.
+    </p>
+
+</section>
+<section>
+    <h2>2.My skills</h2>
+    <ol> <li>program developer</li><br><li>manager developer</li><br><li>plating hair</li>
+    <br><li>watching movie</li></ol>
+</section>
+<section>
+    <h3>3.Education information</h3>
+    <table border="1">  
+        <tr>
+            <th>Institution/schools</th>
+             <th>Degree/levels</th>
+              <th>Year</th>
+            
+            </tr>
+            <tr>
+                <td>The university of dar es salaam</td>
+                <td>first year</td>
+                <td>2025/2026</td>
+
+            </tr>
+            <tr>
+            <td>Bwiru girls</td>
+            <td>High school</td>
+            <td>2025</td>
+            </tr>
+            <tr>
+                <td>Bogwe</td>
+                <td>secondary school</td>
+                <td>2022</td>
+            </tr>
+            <tr>
+                <td>Bogwe</td>
+                <td>primary school</td>
+                <td>2018</td>
+            </tr>
+            
+
+        
+    </table border="1">
+    <section>
+ <h4>4.My hobbies</h4>
+ <ul>
+    <li>driving knowledge</li><br><li>cooking</li><br><li>travelling to new places in the world</li>
+ </ul>
+</section>
+<section>
+    <h4>5.My images</h4>
+    <div class="images">
+        <img src="IMAGE/image.jpg"width="250" height="250">
+
+    </div>
+</section>
+<!--The links section-->
+<section>
+    <h4>6.My favourate links</h4>
+    <ul class="links">
+        <li><a href="c:\Users\USER\Videos">youtube<img src="IMAGE/youtube.jpeg" alt="YouTube" height="100" width="100"></a></li>
+    </ul>
+</section>
+
+
+<form class="container">
+    <h3>7.details</h3>
+    <label for="name">name;</label><br>
+    <input type="text" id="name" name="name" placeholder="last,middle,first"><br><br>
+    <label for="email">Email;</label><br>
+    <input type="email" id="email" name="email" placeholder="example@gmail.com"><br>
+    <label for="password">password;</label><br>
+    <input type="password" id="password" name="password"><br><br>
+    <button type="submit">submit</button>
+</form>
+
+
+
+
+
+
+
+</section>
+
+    
+    
+    
+</body>
+</html>

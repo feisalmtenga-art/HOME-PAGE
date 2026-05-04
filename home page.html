@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Group Student Portfolio</title>
+  <style type="text/css">
+    body {
+      background: linear-gradient(135deg, #02194c, #000000);
+      color: #479860;
+      min-height: 100vh;
+      margin: 0;
+      padding: 20px;
+      font-family: High Tower Text;
+      counter-reset: section;
+    }
+    h1 {
+      color: #d9e0e5;
+      text-align: center;
+      margin: 20px 0;
+    }
+    h3 {
+      color: #d9e0e5;
+      text-align: center;
+      margin: 20px 0;
+    }
+    p, li, td {
+      color: #656d77;
+    }
+    hr {
+      border: 0;
+      border-top: 1px solid rgb(77, 119, 52);
+      margin: 20px 0;
+    }
+    header {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 20px;
+      border-radius: 12px;
+      margin: 20px 0;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    }
+    header p {
+      color: #82c0ff;
+      line-height: 1.6;
+      text-align: justify;
+    }
+    nav {
+      margin: 20px 0;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    }
+    nav ol {
+      list-style: none;
+      counter-reset: nav-item;
+      padding: 0;
+    }
+    nav li {
+      list-style: none;
+      counter-increment: nav-item;
+      margin: 8px 0;
+    }
+    nav li::before {
+      content: counter(nav-item);
+      display: inline-block;
+      width: 25px;
+      height: 25px;
+      background: #479860;
+      color: #ffffff;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 25px;
+      margin-right: 10px;
+      font-weight: bold;
+      font-size: 14px;
+    }
+    nav a {
+      color: #003468;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.2s ease, transform 0.2s ease;
+    }
+    nav a:hover {
+      color: #d9e0e5;
+      text-decoration: underline;
+      transform: translateY(-1px);
+    }
+    section {
+      margin: 20px 0;
+      padding: 20px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.05);
+      transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+    }
+    section:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 16px 30px rgba(0, 0, 0, 0.25);
+      background: rgba(255, 255, 255, 0.12);
+    }
+    section p {
+      color: #82c0ff;
+      line-height: 1.6;
+      text-align: justify;
+      border-left: 4px solid rgba(50, 78, 121, 0.8);
+      padding-left: 14px;
+      margin: 16px 0;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+      border-radius: 12px;
+      overflow: hidden;
+      margin: 20px 0;
+    }
+    th, td {
+      padding: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+    th {
+      background: rgba(255, 255, 255, 0.15);
+      color: #544040;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    tbody tr:nth-child(even) td {
+      background: rgba(255, 255, 255, 0.06);
+    }
+    tbody tr:hover td {
+      background: rgba(255, 255, 255, 0.14);
+      color: #ffffff;
+    }
+    img {
+      border-radius: 8px;
+      max-width: 100%;
+      border: 1px solid rgba(103, 92, 201, 0.865);
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.3);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      display: block;
+      margin: 20px auto;
+    }
+    img:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.35);
+    }footer{
+        text-align: center;
+        padding: 15px;
+        font-family: 'Times New Roman', Times, serif;
+        border-top: 1px solid wheat;
+        margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+    <header>
+        <h1>Student Portfolio Website</h1> 
+        <p>This is a well developed group assignment. This website is a work of 8 students who are first year of bachelour of science in business information technology from college of information communication technology (COICT) from University of Dar es Salaam (UDSM). who are developing competent skills in Web design and development which shows each one of their personal portfolio.          
+        </p>
+    </header>
+    
+    <img src="IMAGE/Screenshot_20260426_132615 - Copy.jpg" alt="Group portfolio banner" width="1000" height="400">
+
+    <nav>
+        <h3>Navigation Menu</h3>
+        <ol>
+            <li><a href="Feisal.html">FEISAL</a></li>
+            <li><a href="dons.html">DAVID</a></li>
+            <li><a href="ansigar css.html">ANSIGAR</a></li>
+            <li><a href="MANASSEH CSS.html">MANASE</a></li>
+            <li><a href="index.html">STELLA</a></li>
+            <li><a href="FAISAL MASSAWE CSS.html">FAISAL</a></li>
+            <li><a href="profile.html">AMARRY</a></li>
+            <li><a href="contact page.html">Contact Us</a></li>
+        </ol>
+    </nav>
+
+    <section>
+        <h3>Group Introduction</h3>
+        <p>
+            We are the BSc Business Information Technology (BIT) cohort at the College of Information and Communication Technologies (COICT), University of Dar es Salaam. This platform is our collective digital home a space where each of our 80 students showcases their individual academic journey, technical projects, and professional aspirations.
+        </p>
+        <p>
+            Our programme sits at the intersection of computer science and business management, equipping us with the knowledge to design, develop, and manage information systems that drive realworld impact. From database design and software development to ebusiness strategy and systems analysis, we are trained to think both as technologists and as business strategists.
+        </p>
+        <p>
+            This portfolio hub represents not just our coursework, but our growth the skills we have built, the problems we have solved, and the professionals we are becoming. Browse through our individual profiles and discover the unique strengths, projects, and stories that make up our class.
+        </p>
+    </section>
+    
+    <img src="IMAGE/gggg.jpeg" alt="Group photo" height="250" width="600">
+
+</body>
+<footer>
+    &copy; 2026 IS 181 GROUP GE. @All rights reserved.
+    </footer>
+
+</html>

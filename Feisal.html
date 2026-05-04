@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+
+  <title>
+    pOTFOLIO
+  </title>
+  <style type="text/css">
+    body {
+      background: linear-gradient(135deg, #02194c, #000000);
+      color: #479860;
+      min-height: 100vh;
+      margin: 0;
+      padding: 20px;
+      font-family: High Tower Text;
+      counter-reset: section;
+    }
+    h4 {
+      color: #000000;
+      text-align: center;
+    }
+    .section {
+      margin: 20px 0;
+      padding: 20px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.05);
+      transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+    }
+    .section:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 16px 30px rgba(0, 0, 0, 0.25);
+      background: rgba(255, 255, 255, 0.12);
+    }
+    .section::before {
+      counter-increment: section;
+      content: counter(section);
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      background: #479860;
+      color: #010100;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 30px;
+      margin-right: 10px;
+      font-weight: bold;
+      font-size: 18px;
+    }
+    p, li, td {
+      color: #656d77;
+    }
+    hr {
+      border: 0;
+      border-top: 1px solid rgb(77, 119, 52);
+      margin: 20px 0;
+    }
+    ul {
+      padding: 12px 18px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.04);
+      counter-reset: item;
+    }
+    li {
+      list-style: none;
+    }
+    li::before {
+      counter-increment: item;
+      content: counter(item);
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      background: #474a98;
+      color: #aaca1c;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 20px;
+      margin-right: 10px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+    p {
+      border-left: 4px solid rgba(50, 78, 121, 0.8);
+      padding-left: 14px;
+      margin: 16px 0;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    th, td {
+      padding: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+    th {
+      background: rgba(255, 255, 255, 0.15);
+      color: #544040;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    tbody tr:nth-child(even) td {
+      background: rgba(255, 255, 255, 0.06);
+    }
+    tbody tr:hover td {
+      background: rgba(255, 255, 255, 0.14);
+      color: #ffffff;
+    }
+    tr:hover td {
+      background: rgba(255, 255, 255, 0.08);
+    }
+    a {
+      color: #003468;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.2s ease, transform 0.2s ease, background 0.2s ease;
+    }
+    a:hover {
+      color: #d9e0e5;
+      text-decoration: underline;
+      transform: translateY(-1px);
+    }
+    a:visited {
+      color: #1b3c6d;
+    }
+    a:focus {
+      outline: 2px solid rgba(130, 192, 255, 0.75);
+      outline-offset: 3px;
+    }
+    .link-table a {
+      display: inline-block;
+      padding: 6px 10px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.06);
+    }
+    form {
+      max-width: 600px;
+      margin: 0 auto 20px;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 14px;
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+    }
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #dde7ff;
+    }
+    input[type="text"],
+    input[type="email"],
+    textarea,
+    select {
+      width: 100%;
+      padding: 10px 12px;
+      margin-bottom: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.12);
+      color: #ffffff;
+      font-size: 16px;
+      box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.15);
+      transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    textarea:focus,
+    select:focus {
+      outline: none;
+      border-color: rgba(130, 192, 255, 0.8);
+      box-shadow: 0 0 0 4px rgba(130, 192, 255, 0.12);
+      background: rgba(255, 255, 255, 0.18);
+    }
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+    button,
+    input[type="submit"] {
+      display: inline-block;
+      background: #2266cc;
+      color: #ffffff;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+    button:hover,
+    input[type="submit"]:hover {
+      background: #1c57aa;
+      transform: translateY(-1px);
+    }
+    img {
+      border-radius: 8px;
+      max-width: 100%;
+      border: 1px solid rgba(103, 92, 201, 0.865);
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.3);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      display: block;
+      margin: 0 auto;
+    }
+    img:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.35);
+    }
+  </style>
+  </head>
+  <body>
+    <div class="section section-1">
+    PERSONAL POTFOLIO
+    <h4>FEISAL MAHAMOUD AHMED</h4>
+    <HR>
+      <P>
+        Welcome to my personal portfolio. I am FEISAL MAHAMOUD AHMED, a dedicated student at the University of Dar es Salaam, pursuing a Bachelor of Science in Business Information Technology (BSc BIT) at the College of Information and Communication Technologies (CoICT).
+This platform showcases my academic journey, skills, and growing experience in the field of information technology and business. I am passionate about using technology to solve real-world business challenges, and I am continuously building my knowledge in areas such as software development, data management, and systems analysis.
+Through this portfolio, you will find my projects, achievements, and professional interests as I work towards becoming a competent and innovative IT professional.
+      </P>
+<br>
+    </div>
+    <div class="section section-2">
+    SKILLS
+          <ul>
+            <li>swimming</li>
+            <li>gaming</li>
+            <li>dancing</li>
+            <li>cooking</li>
+          </ul>
+          <br>
+    </div>
+        <div class="section section-3">
+        EDUCATION TABLE
+        <ul></ul>
+          <table border="1">
+            <tr>
+              <th>EDUCATION LEVEL</th>
+              <th>SCHOOLS</th>
+              <th>YEAR OF STUDY</th>
+            </tr>
+            <tr>
+                <td>primary education</td>
+                <td>EBENEZER PRIMARY SCHOOL</td>
+                <td>2018</td>
+            </tr>
+            <tr>
+                <td>secondary education</td>
+                <td>MAWENZI SECONDARY SCHOOL</td>
+                <td>2022</td>
+            </tr>
+            <tr>
+                <td>advanced level education</td>
+                <td>SOKOINE MEMORIAL HIGH SCHOOL</td>
+                <td>2025</td>
+            </tr>
+            <tr>
+              <td>university education</td>
+              <td>UNIVERSITY OF DAR ES SALAAM</td>
+              <td>2025-present</td>
+            </tr>
+          </table>
+          <br><br>
+        </div>
+    <div class="section section-4">
+    hobiies and interst  
+    <ul>
+      <li>singing</li>
+      <li>dancing</li>
+      <li>cooking</li>
+      <li>swimming</li>
+      <li>gaming</li>
+      <li>eating</li>
+    </ul>
+    <br><br>
+    </div>
+    
+    <div class="section section-5">
+    <!.. this is an image section..>
+    PERSONAL IMAGES.
+    <table border="1">
+      <tr>
+        <th><img src="IMAGE/me.jpeg" alt="my image 1" width="250" height="250"></th>
+        <th><img src="IMAGE/WhatsApp Image 2026-05-01 at 5.26.30 PM.jpeg" alt="my image 2" width="250" height="250"></th>
+        <th><img src="IMAGE/WhatsApp Image 2026-05-01 at 5.24.19 PM.jpeg" alt="my image 3" width="250" height="250"></th>
+        <th><img src="IMAGE/MAMDOG.jpeg" alt="my image 4" width="250" height="250"></th>
+      </tr>
+      <tr>
+        <td>ME</td>
+        <td>MOM</td>
+        <td>AUNT</td>
+        <td>AUNTY</td>
+      </tr>
+    </table>
+    <br><br>
+    </div>
+  <div class="section section-6">
+  <!..THIS IS A LINK SECTION..>
+   favourite links
+   <table border="1">
+      <tr>
+        <td><a href="https://www.youtube.com/watch?v=k1eQOPCbWJk&list=RD73E0BnFs7S4">youtube</a></td>
+        <td><a href="https://www.youtube.com/watch?v=k1eQOPCbWJk&list=RD73E0BnFs7S4"><img src="IMAGE/youtube.jpeg" width="100" height="100"></a></td>
+        <td><a href="https://www.instagram.com/?hl=en">instgram</a></td>
+        <td><a href="https://www.instagram.com/?hl=en"><img src="IMAGE/instagram.png" width="100" height="100"></a></td>
+        <td><a href="https://www.tiktok.com/en/">tiktok</a></td>
+        <td><a href="https://www.tiktok.com/en/"><img src="IMAGE/tiktok.png" width="100" height="100"></a></td>
+        <td><a href="https://web.whatsapp.com/">whatsapp</a></td>
+        <td><a href="https://web.whatsapp.com/"><img src="IMAGE/whatsapp.jpeg" width="100" height="100"></a></td>
+      </tr>
+    </table>
+    </div>
+  </body>
+</html>

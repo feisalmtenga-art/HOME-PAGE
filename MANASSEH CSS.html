@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            MANASE'S PORTFOLIO
+        </title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+        <style>
+          :root {
+            --bg-start: #eff6ff;
+            --bg-end: #e0f2fe;
+            --card: #ffffff;
+            --text: #0f172a;
+            --muted: #475569;
+            --primary: #1d4ed8;
+            --secondary: #9333ea;
+            --accent: #ec4899;
+            --border: rgba(59, 130, 246, 0.25);
+          }
+
+          body {
+            margin: 0;
+            padding: 40px 24px;
+            font-family: 'Inter', Arial, sans-serif;
+            background:
+              radial-gradient(circle at top left, rgba(59, 130, 246, 0.22), transparent 20%),
+              radial-gradient(circle at bottom right, rgba(236, 72, 153, 0.16), transparent 18%),
+              linear-gradient(135deg, var(--bg-start), var(--bg-end));
+            background-attachment: fixed;
+            background-size: cover;
+            color: var(--text);
+          }
+
+          h3,
+          h4 {
+            font-family: 'Poppins', Arial, sans-serif;
+            text-align: center;
+          }
+
+          .page-shell {
+            background: rgba(255, 255, 255, 0.92);
+            border-radius: 32px;
+            padding: 36px 40px;
+            max-width: 980px;
+            margin: 24px auto;
+            border: 2px solid rgba(59, 130, 246, 0.25);
+            box-shadow: 0 24px 60px rgba(15, 23, 42, 0.12);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+          }
+
+          .page-shell:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 28px 72px rgba(15, 23, 42, 0.18);
+          }
+
+          h3 {
+            color: var(--primary);
+            background: rgba(59, 130, 246, 0.12);
+            border: 2px solid var(--border);
+            border-radius: 16px;
+            display: inline-block;
+            padding: 16px 22px;
+            margin: 28px 0 24px;
+          }
+
+          h4 {
+            color: var(--secondary);
+            background: rgba(147, 51, 234, 0.12);
+            border-radius: 14px;
+            display: inline-block;
+            padding: 10px 16px;
+            margin: 0 0 24px;
+          }
+
+          p, ul, table {
+            background: var(--card);
+            border-radius: 18px;
+            border: 1px solid var(--border);
+            box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+          }
+
+          p {
+            padding: 22px 24px;
+            line-height: 1.75;
+            max-width: 900px;
+            margin: 0 auto 32px;
+            color: var(--text);
+            text-align: justify;
+            border: 1px solid rgba(59, 130, 246, 0.12);
+          }
+
+          ul {
+            padding: 22px 24px;
+            margin: 0 auto 32px;
+          }
+
+          ul {
+            padding: 18px 22px;
+            max-width: 900px;
+            margin: 0 auto 28px;
+            list-style: disc inside;
+          }
+
+          li {
+            margin: 8px 0;
+            color: var(--muted);
+          }
+
+          table {
+            width: 100%;
+            max-width: 900px;
+            margin: 24px auto;
+            border-collapse: collapse;
+            overflow: hidden;
+            border-radius: 18px;
+            box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+          }
+
+          table td,
+          table th {
+            padding: 16px 18px;
+            border-bottom: 1px solid rgba(148, 163, 184, 0.25);
+            text-align: left;
+          }
+
+          table tr:nth-child(even) {
+            background: #f8fbff;
+          }
+
+          table tr:hover {
+            background: rgba(59, 130, 246, 0.08);
+          }
+
+          table th {
+            background: var(--primary);
+            color: #ffffff;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+          }
+
+          table td:first-child,
+          table th:first-child {
+            padding-left: 22px;
+          }
+
+          table td:last-child,
+          table th:last-child {
+            padding-right: 22px;
+          }
+
+          img {
+            display: block;
+            max-width: 260px;
+            width: 100%;
+            margin: 24px auto;
+            border-radius: 24px;
+            border: 4px solid rgba(147, 51, 234, 0.2);
+            box-shadow: 0 18px 40px rgba(15, 23, 42, 0.12);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+          }
+
+          img:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 24px 60px rgba(15, 23, 42, 0.18);
+            filter: brightness(1.05);
+          }
+
+          img.profile-image {
+            max-width: 300px;
+            border: 5px solid var(--primary);
+            border-radius: 32px;
+          }
+
+          img.thumbnail {
+            max-width: 120px;
+            border-radius: 12px;
+            border: 2px solid rgba(59, 130, 246, 0.15);
+          }
+
+          img.thumbnail:hover {
+            transform: scale(1.08);
+            border-color: var(--accent);
+          }
+
+          img.gallery {
+            max-width: 100%;
+            aspect-ratio: 16/9;
+            object-fit: cover;
+            border-radius: 16px;
+          }
+
+          /* CSS Masking Effects */
+          .mask-fade {
+            mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
+          }
+
+          .mask-fade-lr {
+            mask-image: linear-gradient(to right, black 0%, transparent 50%, black 100%);
+            -webkit-mask-image: linear-gradient(to right, black 0%, transparent 50%, black 100%);
+          }
+
+          .mask-circle {
+            mask-image: radial-gradient(circle, black 70%, transparent 100%);
+            -webkit-mask-image: radial-gradient(circle, black 70%, transparent 100%);
+            border-radius: 50%;
+          }
+
+          .mask-gradient {
+            mask-image: linear-gradient(135deg, black 0%, transparent 50%, black 100%);
+            -webkit-mask-image: linear-gradient(135deg, black 0%, transparent 50%, black 100%);
+          }
+
+          .mask-vignette {
+            mask-image: radial-gradient(ellipse at center, black 0%, black 60%, transparent 100%);
+            -webkit-mask-image: radial-gradient(ellipse at center, black 0%, black 60%, transparent 100%);
+          }
+
+          .mask-top-fade {
+            mask-image: linear-gradient(to bottom, transparent 0%, black 20%);
+            -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 20%);
+          }
+
+          .mask-bottom-fade {
+            mask-image: linear-gradient(to top, transparent 0%, black 20%);
+            -webkit-mask-image: linear-gradient(to top, transparent 0%, black 20%);
+          }
+
+          /* Code Challenge Styling */
+          .code-challenge {
+            background: var(--card);
+            border-radius: 18px;
+            border: 1px solid var(--border);
+            box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+            padding: 24px;
+            margin: 24px auto 32px;
+            max-width: 900px;
+          }
+
+          .code-challenge h4 {
+            color: var(--secondary);
+            margin-top: 0;
+            padding-bottom: 12px;
+            border-bottom: 2px solid rgba(147, 51, 234, 0.2);
+          }
+
+          pre {
+            background: #1e293b;
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 12px;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            line-height: 1.6;
+            margin: 16px 0;
+            border: 1px solid rgba(59, 130, 246, 0.1);
+            box-shadow: inset 0 2px 8px rgba(15, 23, 42, 0.2);
+          }
+
+          code {
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            background: rgba(59, 130, 246, 0.1);
+            padding: 3px 8px;
+            border-radius: 6px;
+            color: var(--accent);
+            word-break: break-word;
+          }
+
+          pre code {
+            background: transparent;
+            color: inherit;
+            padding: 0;
+            border-radius: 0;
+          }
+
+          .challenge-difficulty {
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 12px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+          }
+
+          .challenge-difficulty.easy {
+            background: rgba(34, 197, 94, 0.15);
+            color: #16a34a;
+            border: 1px solid rgba(34, 197, 94, 0.3);
+          }
+
+          .challenge-difficulty.medium {
+            background: rgba(245, 158, 11, 0.15);
+            color: #d97706;
+            border: 1px solid rgba(245, 158, 11, 0.3);
+          }
+
+          .challenge-difficulty.hard {
+            background: rgba(239, 68, 68, 0.15);
+            color: #dc2626;
+            border: 1px solid rgba(239, 68, 68, 0.3);
+          }
+
+          .code-output {
+            background: #f8fbff;
+            border-left: 4px solid var(--primary);
+            padding: 14px 16px;
+            border-radius: 6px;
+            margin-top: 12px;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            color: var(--text);
+          }
+
+          /* CSS Animations */
+          @keyframes fadeIn {
+            from {
+              opacity: 0;
+            }
+            to {
+              opacity: 1;
+            }
+          }
+
+          @keyframes slideInUp {
+            from {
+              opacity: 0;
+              transform: translateY(30px);
+            }
+            to {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+
+          @keyframes slideInDown {
+            from {
+              opacity: 0;
+              transform: translateY(-30px);
+            }
+            to {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+
+          @keyframes slideInLeft {
+            from {
+              opacity: 0;
+              transform: translateX(-30px);
+            }
+            to {
+              opacity: 1;
+              transform: translateX(0);
+            }
+          }
+
+          @keyframes slideInRight {
+            from {
+              opacity: 0;
+              transform: translateX(30px);
+            }
+            to {
+              opacity: 1;
+              transform: translateX(0);
+            }
+          }
+
+          @keyframes bounce {
+            0%, 100% {
+              transform: translateY(0);
+            }
+            50% {
+              transform: translateY(-20px);
+            }
+          }
+
+          @keyframes pulse {
+            0%, 100% {
+              opacity: 1;
+            }
+            50% {
+              opacity: 0.7;
+            }
+          }
+
+          @keyframes glow {
+            0%, 100% {
+              box-shadow: 0 0 8px rgba(29, 78, 216, 0.5);
+            }
+            50% {
+              box-shadow: 0 0 16px rgba(29, 78, 216, 0.8);
+            }
+          }
+
+          @keyframes rotate {
+            from {
+              transform: rotate(0deg);
+            }
+            to {
+              transform: rotate(360deg);
+            }
+          }
+
+          @keyframes scaleIn {
+            from {
+              opacity: 0;
+              transform: scale(0.95);
+            }
+            to {
+              opacity: 1;
+              transform: scale(1);
+            }
+          }
+
+          /* Animation Classes */
+          .animate-fade-in {
+            animation: fadeIn 0.6s ease-in-out;
+          }
+
+          .animate-slide-up {
+            animation: slideInUp 0.6s ease-out;
+          }
+
+          .animate-slide-down {
+            animation: slideInDown 0.6s ease-out;
+          }
+
+          .animate-slide-left {
+            animation: slideInLeft 0.6s ease-out;
+          }
+
+          .animate-slide-right {
+            animation: slideInRight 0.6s ease-out;
+          }
+
+          .animate-bounce {
+            animation: bounce 2s infinite;
+          }
+
+          .animate-pulse {
+            animation: pulse 2s infinite;
+          }
+
+          .animate-glow {
+            animation: glow 2s infinite;
+          }
+
+          .animate-rotate {
+            animation: rotate 2s linear infinite;
+          }
+
+          .animate-scale-in {
+            animation: scaleIn 0.6s ease-out;
+          }
+
+          .animate-delay-1 {
+            animation-delay: 0.1s;
+          }
+
+          .animate-delay-2 {
+            animation-delay: 0.2s;
+          }
+
+          .animate-delay-3 {
+            animation-delay: 0.3s;
+          }
+
+          .animate-duration-fast {
+            animation-duration: 0.3s;
+          }
+
+          .animate-duration-slow {
+            animation-duration: 1.2s;
+          }
+
+          a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s ease, transform 0.2s ease;
+          }
+
+          a:hover,
+          a:focus {
+            color: var(--primary);
+            text-decoration: underline;
+            transform: translateX(2px);
+          }
+
+          form {
+            background: var(--card);
+            border-radius: 18px;
+            border: 1px solid var(--border);
+            box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+            padding: 28px 24px;
+            max-width: 600px;
+            margin: 24px auto 32px;
+          }
+
+          input,
+          textarea,
+          select {
+            width: 100%;
+            padding: 12px 16px;
+            margin: 12px 0 18px;
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            border-radius: 12px;
+            font-family: 'Inter', Arial, sans-serif;
+            font-size: 14px;
+            color: var(--text);
+            background: #f9fafb;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+            box-sizing: border-box;
+          }
+
+          input:focus,
+          textarea:focus,
+          select:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.1);
+            background: #ffffff;
+          }
+
+          textarea {
+            resize: vertical;
+            min-height: 120px;
+            font-size: 14px;
+            line-height: 1.5;
+          }
+
+          button {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: #ffffff;
+            padding: 14px 28px;
+            border: none;
+            border-radius: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 14px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 8px 20px rgba(29, 78, 216, 0.2);
+          }
+
+          button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 28px rgba(29, 78, 216, 0.3);
+          }
+
+          button:active {
+            transform: translateY(0);
+          }
+
+          label {
+            display: block;
+            font-weight: 600;
+            color: var(--text);
+            margin-top: 16px;
+            margin-bottom: 6px;
+          }
+        </style>
+    </head>
+
+    <body>
+      <div class="page-shell">
+       <h3> 1.PERSONAL INFORMATION</h3>
+        
+        <br>
+        <h4>Name: MANASE WILLIAM MDAKI</h4>
+        
+            <p>
+                My name is MANASE WILLIAM MDAKI . Am UDSM student  taking bachelor of science in business information technology.I am creative and social individual who enjoys connecting with people and expressing ideas through digital content. i have strong interest in networking,innovation,and self improvement,i like exploring new opportunities national websites
+     and building my carier goals every day. 
+
+            </p>
+
+            <br>
+          <h3> 2. SKILLS</h3>
+            
+            <ul>
+                <li>sales</li>
+                <li>Email markerting</li>
+                <li> networking</li>
+                <li>graphic design</li>      
+            </ul>            
+
+            <br>
+          <h3>  3. EDUCATION </h3>
+              
+                <table border>
+                    <tr>
+                        <td>LEVEL</td>
+                        <td>SCHOOL</td>
+                    
+                        <td>YEAR</td>
+                    </tr>
+
+                    <tr>
+                        <td>Bachelor degree</td>
+                        <td>UDSM</td>
+                       
+                        <td>2025-</td>
+                    </tr>
+
+                    <tr>
+                        <td>Advanced secondary</td>
+                        <td>Kiwere</td>
+                       
+                        <td>2023-2025</td>
+                    </tr>
+
+                    <tr>
+                        <td>Ordinary level</td>
+                        <td>magugu</td>
+                        
+                        <td>2019-2022</td>
+                    </tr>
+
+                     <tr>
+                        <td>Primary</td>
+                        <td>mekiroy</td>
+                        
+                        <td>2012-2018</td>
+                    </tr>
+                </table>
+
+                <br>
+
+                <h3> 4. HOBIES </h3>
+                    <ul>
+                        
+                      <li>sports:playing or  body exercising to maintain  health</li>
+                     <li>   Reading: learning new ideas from books like "think and grow rich"</li>
+                      <li>  Gaming: playing games like  eFOOTBALL and missions games </li>
+            
+                    </ul>
+
+                     <h3> 5. PROFILE </h3>
+    <br>
+    <img src="IMAGE/IMG-20260504-WA0088.jpg" height="250" width="200">
+
+    <br><br>
+   <!..THIS IS THE LINK SECTION..>
+   <br>
+     <h3> 6.FAVOURITE LINKS </h3>
+      <ul>
+    <a href="https://www.youtube.com/watch?v=k1eQOPCbWJk&list=RD73E0BnFs7S4">youtube</a>
+    <br>
+    <a href="https://www.youtube.com/watch?v=k1eQOPCbWJk&list=RD73E0BnFs7S4"><img src="IMAGE/youtube.jpeg" width="100" height="100"></a>
+    <br>
+    <a href="https://www.instagram.com/?hl=en">instgram</a>
+    <br>
+     <a href="https://www.instagram.com/?hl=en"><img src="IMAGE/instagram.jpeg" width="100" height="100"></a>
+     <br>
+    <a href="https://web.whatsapp.com/">whatsapp</a>
+    <br>
+     <a href="https://web.whatsapp.com/"><img src="IMAGE/whatsapp.jpeg" width="100" height="100"></a>
+    </ul>
+      </div>
+    </body>
+</html>
+
+
+                    
+  
